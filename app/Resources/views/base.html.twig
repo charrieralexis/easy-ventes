@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Easy ventes{% endblock %}</title>
+        {% stylesheets output="css/compiled/main.css" filter="cssrewrite"
+            "vendor/bootstrap/css/bootstrap.css"
+            "vendor/bootstrap/css/bootstrap-theme.css" 
+            "vendor/bxslider/jquery.bxslider.css" 
+            "css/font.css" 
+            "css/style.css" 
+        %}
+            <link rel="stylesheet" type="text/css" href="{{asset_url}}" />
+        {% endstylesheets %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+        <section>
+        {% block nav %}
+            {# EasyVentesFrontBundle:include:nav.html.twig #}
+            {% include ':include:nav.html.twig' %}
+        {% endblock %}
+        <div class='page'>
+        {% block body %}{% endblock %}
+        </div>
+        </section>
+        
+        {% javascripts output="js/compiled/main.js"
+            "vendor/jquery/jquery-1.11.2.min.js"
+            "vendor/bxslider/jquery.bxslider.js"
+            "vendor/bootstrap/js/bootstrap.min.js"
+            "js/main.js"
+        %}
+            <script src="{{asset_url}}" type="text/javascript"></script>
+        {% endjavascripts %}
+    </body>
+</html>

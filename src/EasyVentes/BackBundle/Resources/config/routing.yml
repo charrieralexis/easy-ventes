@@ -1,0 +1,3 @@
+easy_ventes_back_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: EasyVentesBackBundle:Default:index }

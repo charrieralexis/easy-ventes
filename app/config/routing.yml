@@ -1,0 +1,10 @@
+easy_ventes_front:
+    resource: "@EasyVentesFrontBundle/Resources/config/routing.yml"
+    prefix:   /
+    
+easy_ventes_back:
+    resource: "@EasyVentesBackBundle/Resources/config/routing.yml"
+    prefix:   /back
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"

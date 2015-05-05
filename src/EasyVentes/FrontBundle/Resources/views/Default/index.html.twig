@@ -1,0 +1,128 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+<div id="slider">
+<ul class="bxslider list-unstyled">
+ <!-- <li>
+      <div class="container">
+          <div class="row">
+                <div class="title-slide">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h2><a href="{{ path('easy_ventes_front_product')}}"> Produits </a></h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-slide col-lg-6">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <h3><a href="{{ path('easy_ventes_front_product_detail', {'id': product.id }) }}">{{ product.name }}</a></h3>
+                            <p>{{product.description}}</p>
+                        </div>
+                        <div class="col-lg-6">
+                            <img src="{{product.image}}" />
+                        </div>
+                    </div>
+                </div>
+          </div>
+      </div>
+      <img src="{{ asset('images/wall1.jpg') }}" />
+  </li>
+  <li>
+      <div class="container">
+          <div class="row">
+                <div class="title-slide">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h2><a href="{{ path('easy_ventes_front_event')}}"> Evènements </a></h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-slide col-lg-6">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h3><a href="{{ path('easy_ventes_front_event_detail', {'id': event.id }) }}">{{ event.name }}</a></h3>
+                            <p>{{event.description}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+      </div>
+      <img src="{{ asset('images/wall2.jpg') }}" />
+  </li>
+  <li>
+      <div class="container">
+          <div class="row">
+                <div class="title-slide">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h2 class="black"><a href="{{ path('easy_ventes_front_inscription')}}"> Inscription </a></h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-slide col-lg-6">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <p class="black">Inscrivez vous sur le site pour benificier de nos produits</p>
+                        </div>
+                    </div>
+                </div>
+          </div>
+      </div>
+      <img src="{{ asset('images/wall3.jpg') }}" />
+  </li>
+  -->
+  <li>
+      <div class="container">
+            <div class="content-slide">
+                <h2><a href="{{ path('easy_ventes_front_product')}}">Produits</a></h2>
+                <h3>{{product.name}}</h3>
+                <p>
+                    {{product.description}}
+                </p>
+          </div>
+      </div>
+      <img src="{{ asset('images/wall1.jpg') }}" />
+  </li>
+  <li>
+      <div class="container">
+            <div class="content-slide">
+                <h2><a href="{{ path('easy_ventes_front_event')}}"> Evènements </a></h2>
+                <h3>{{event.name}}</h3>
+                <p>
+                    {{event.description}}
+                </p>
+          </div>
+      </div>
+      <img src="{{ asset('images/wall2.jpg') }}" />
+  </li>
+  <li>
+    <div class="container">
+          <div class="content-slide">
+              <h2><a href="{{ path('easy_ventes_front_inscription')}}"> Inscription </a></h2>
+              <p class="black">Inscrivez vous sur le site pour benificier de nos produits</p>
+        </div>
+      </div>
+      <img src="{{ asset('images/wall3.jpg') }}" />
+  </li>
+</ul>
+</div>
+<div id="pages">
+    <div class="container">
+        <ul class="list-unstyled nav nav-justified">
+            <li><a href="{{ path('easy_ventes_front_event') }}">Prochaines Ventes</a></li>
+            <li><a href="{{ path('easy_ventes_front_product') }}">Produits</a></li>
+            <li><a href="{{ path('easy_ventes_front_inscription') }}">Inscription</a></li>
+        </ul> 
+    </div>
+</div>
+<div id="formulaire">
+    <div class="container">
+        <div class="col-xs-offset-3 col-lg-6">
+        <h1>Inscription au site</h1>
+            {{form(form)}}
+        </div>
+    </div>
+</div>
+  
+{% endblock %}

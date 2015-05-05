@@ -1,0 +1,26 @@
+<div id="navigation">
+    <nav id="menu" class="navbar navbar-inverse {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}connected{% endif %}">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <ul class="list-unstyled nav nav-justified collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <li id="le-logo"><a class="logo" href="{{ path('easy_ventes_front_homepage') }}"><img src="{{ asset('images/logo.png') }}" alt=""></a></li>
+            <li><a href="{{ path('easy_ventes_front_event') }}">Prochaines Ventes</a></li>
+            <li><a href="{{ path('easy_ventes_front_product') }}">Produits</a></li>
+            <li><a href="{{ path('easy_ventes_front_inscription') }}">Inscription</a></li>
+            <li class="connexion {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}co{% endif %}">
+                    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                        <a class="deconnexion" href="{{ path('fos_user_security_logout') }}">
+                            Deconnexion <span>{{ app.user.username | capitalize }}</span>
+                        </a>
+                    {% endif %}
+                    {% if not is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                        {{ render(controller('FOSUserBundle:Security:login')) }}
+                    {% endif %}
+            </li>
+        </ul>
+    </nav>
+</div>

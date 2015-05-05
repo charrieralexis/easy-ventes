@@ -1,0 +1,46 @@
+{% extends '::base.html.twig' %}
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class='col-xs-offset-3 col-lg-2 lien-return'>
+                <a class="btn btn-default" href="{{ path('easy_ventes_front_event') }}">< liste des évènements</a>
+            </div>
+        </div>
+        <div class="row">
+            <article class="event col-xs-offset-3 col-lg-6">
+                <h2>{{ event.name }}</h2>
+                <p>{{ event.description }}</p>
+                <p>{{ event.address }}</p>
+                <p>{{ event.codePostal }}</p>
+                <p>{{ event.ville }}</p>
+                <div class="map">
+                  <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.fr/maps?f=q&amp;source=s_q&amp;hl=fr&amp;geocode=&amp;q={{ event.address|replace({'% %': "+"}) }},+{{ event.ville|replace({'% %': "+"}) }}&amp;aq=2&amp;oq={{ event.address|replace({'% %': "+"}) }}&amp;sspn=0.010673,0.033023&amp;ie=UTF8&amp;hq=&amp;hnear={{ event.address|replace({'% %': "+"}) }},+{{ event.codePostal }}+{{ event.ville|replace({'% %': "+"}) }}&amp;t=m&amp;z=14&amp;iwloc=A&amp;output=embed"></iframe>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    
+    <div id="formulaire">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-offset-3 col-lg-6">
+                    <h1>Inscription à l'évènement</h1>
+                    {% if event.inscription == null %}
+                        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                            <form method="post" action="">
+                                <input type="hidden" id="form_event" name="form[event]" value="{{event.id}}">
+                                <input type="hidden" id="form_user" name="form[user]" value="{{app.user.id}}">
+                                <button type="submit" id="form_Ajouter" name="form[Ajouter]" class=" btn btn-primary">S'inscrire à {{ event.name }}</button>
+                            </form>
+                        {% else %}
+                            <a href="{{ path('easy_ventes_front_inscription') }}"> Pour participer a l'évènement veuillez vous inscrire.</a>
+                        {% endif %}
+                    {% else %}
+                        <p>Vous êtes inscrit à cet évènement</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

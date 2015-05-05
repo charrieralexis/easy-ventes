@@ -1,0 +1,327 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 14 avr. 2015, 09:34:42
+    Author     : Administrateur
+*/
+.nav > li > a:hover,
+.nav > li > a:active,
+.nav > li > a:focus
+{
+      background-color: #fff;
+}
+.logo,
+.logo img
+{
+    height:200px;
+    transition:0.3s all;
+    -moz-transition:0.3s all;
+    -webkit-transition:0.3s all;
+}
+#menu{
+    position:fixed;
+    top:0;
+    width:100%;
+    height:260px;
+    background: #fff;
+    z-index: 50;
+    box-shadow:0 0 3px #cccccc;
+    transition:0.3s all;
+    -moz-transition:0.3s all;
+    -webkit-transition:0.3s all;
+}
+
+#menu li{
+      height: 220px;
+    line-height: 200px;
+    transition:0.3s all;
+    -moz-transition:0.3s all;
+    -webkit-transition:0.3s all;
+}
+#menu.connected.active ul{
+  height: 50px !important;
+  overflow: hidden !important;
+}
+#menu.active{
+    height:50px;
+    transition:0.3s all;
+    -moz-transition:0.3s all;
+    -webkit-transition:0.3s all;
+}
+#menu.active img{
+    height:50px;
+    display: block;
+    margin:0 auto;
+    padding:0;
+}
+.nav{
+    transition:0.3s all;
+    -moz-transition:0.3s all;
+    -webkit-transition:0.3s all;
+}
+#menu.active .nav{
+    height:50px;
+    transition:0.3s all;
+    -moz-transition:0.3s all;
+    -webkit-transition:0.3s all;
+}
+#menu.active li{
+    padding:5px 0;
+    line-height: 25px;
+    vertical-align: top;
+    
+    transition:0.3s all;
+    -moz-transition:0.3s all;
+    -webkit-transition:0.3s all;
+}
+#menu.active li .logo{
+    padding:0;
+    
+    transition:0.3s all;
+    -moz-transition:0.3s all;
+    -webkit-transition:0.3s all;
+}
+
+.connexion.co a{
+    color:#000;
+}
+
+.connexion.co a:hover{
+    text-decoration:underline;
+}
+
+
+#menu li.connexion{
+    vertical-align: middle;
+    padding-top: 20px;
+    text-align: left;
+    line-height: 20px;
+    height: auto;
+    background:#fff;
+    padding: 20px;
+    border-radius: 5px;
+}
+#menu.active li{
+    height:50px;
+}
+#menu.active .connexion{
+    padding:20px;
+}
+
+#menu.active .connexion.co{
+      vertical-align: top;
+  padding: 8px;
+}
+.green{color:#008a00}
+.red{color:#c00}
+.black{
+    color:#000;
+}
+
+.page{
+    margin-top: 280px
+}
+
+.prix{
+    font-weight: bold;
+}
+.grille:first-child{
+    border-top: 1px solid #cccccc;
+}
+
+.grille{
+    padding:20px 0;
+    border-bottom: 1px solid #cccccc;
+}
+
+.produit,
+.event{
+    border:1px solid #ececec;
+    border-radius:5px;
+    padding:20px;
+    margin-bottom: 30px;
+}
+
+.lien-return{
+    padding-left: 0px;
+    margin-bottom: 20px;
+}
+.lien-return a {
+    display: block;
+}
+.image img{
+    display: block;
+    margin: 0 auto;
+}
+
+.highlight{
+    background:#f2f2f2;
+    padding: 10px 0;
+}
+
+.highlight button{
+    margin:0 5px;
+}
+
+.evenement-date{
+    padding:10px;
+    border-radius:5px;
+    background: #E8E8E8;
+}
+
+.map iframe{
+    width:100%;
+    height:400px;
+}
+
+.evenement{
+    margin-bottom: 30px;
+}
+
+.navbar-inverse{
+    background: #fff;
+    border: none;
+}
+.navbar-inverse .navbar-toggle .icon-bar{
+    background-color: #000;
+}
+.navbar-inverse .navbar-toggle:hover,
+.navbar-inverse .navbar-toggle:focus{
+    background-color: #C0C0C0;
+}
+.navbar-inverse .navbar-toggle .icon-bar:hover{
+    color: #fff;
+}/*
+#slider .bx-wrapper{
+    max-height:800px;
+    overflow:hidden;
+    margin-bottom:0;
+}*/
+
+.alerte-success{
+    display: none;
+}
+
+.alerte-success.active-alert{
+    display: block;
+    background: #ececec;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+
+/*Slider*/
+#slider .bxslider .container{
+    position:relative;
+}
+
+#slider .bxslider .container .content-slide{
+    position:absolute;
+    padding:20px;
+    top:300px;
+    left:100px;
+    color:#fff;
+    border-radius:5px;
+    background:rgba(255,255,255,0.1)
+}
+#slider .bxslider .container .title-slide{
+    position:absolute;
+    padding:20px;
+    top:100px;
+    left:100px;
+    color:#fff;
+    border-radius:5px;
+    background:rgba(255,255,255,0.1)
+}
+
+#slider .bxslider .content-slide h2 a,
+#slider .bxslider .content-slide h3 a
+{
+    text-decoration: none;
+    color:#fff;
+}
+
+#slider .bxslider .container .title-slide h2,
+#slider .bxslider .container h3
+{
+    margin:10px 0;
+}
+
+#slider .bxslider .container .title-slide .black a{
+    color:#000;
+}
+
+
+#remember_me{
+    display: inline-block
+}
+.nav-justified > li > a.deconnexion{
+    text-align: left;
+    padding-left: 0;
+}
+#pages{
+    padding:50px 0
+}
+#pages .nav{
+    margin: 50px 0;
+}
+#pages .nav a{
+    display: block;
+    border:1px dashed #000;
+    width: 200px;
+    height:200px;
+    margin:0 auto;
+    padding:0;
+    box-sizing: border-box;
+    border-radius:50%;
+    line-height: 200px;
+    color:#000;
+    -webkit-transition:0.3s all;
+    -moz-transition:0.3s all;
+}
+
+#pages .nav a:hover{
+    background: #ececec;
+    transition:0.3s all;
+}
+
+#formulaire{
+    padding:50px 0;
+    background:#ececec;
+    margin-bottom: 50px;
+}
+
+.navbar-inverse .navbar-toggle {
+  z-index: 1000;
+}
+@media screen and (min-width: 200px) and (max-width: 640px) {
+    .logo,
+    #le-logo{
+        display: none;
+    }
+    
+    #menu li {
+        height: 35px;
+        line-height: 20px;
+        display: block;
+        background: #fff;
+    }
+    
+    #menu ul {
+        height: 100px;
+        overflow: visible;
+    }
+    #menu{
+        height:50px;
+    }
+    .page{
+        margin-top:50px;
+    }
+    
+    [class^="col"]{
+        margin-left:0;
+    }
+}

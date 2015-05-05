@@ -1,0 +1,44 @@
+{% extends '::base.html.twig' %}
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class='col-xs-offset-2 col-lg-2 lien-return'>
+                <a class="btn btn-default" href="{{ path('easy_ventes_front_product') }}">< Liste des produits</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class='col-xs-offset-2 col-lg-8 produit'>
+                <article class="">
+                    <div class="row">
+                        <div class='col-lg-12'>
+                            <h2>{{ product.name }}</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                    <div class='col-lg-6'>
+                        <p>{{ product.description }}</p>
+                        {% if product.stock > 3 %}
+                                <p class="green">Stock : {{ product.stock }}</p>
+                                {% else %}
+                                    <p class="red">Stock : {{ product.stock }}</p>
+                                    {% if product.alert == null %}
+                                        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                                            <p id="high-{{product.id }}" class="highlight">
+                                            <button class="btn btn-danger" data-alert="{{product.id }}" data-action="{{ path('easy_ventes_front_product_alert') }}" data-user="{{ app.user.id }}">Alerte</button> Recevoir une alerte en cas de disponibilité</p>
+                                            <p id="success-{{product.id }}" class="alerte-success">Alerte enregistrée</p>
+                                        {% endif %}
+                                    {% else %}
+                                            <p id="success-{{product.id }}" class="alerte-success active-alert">Alerte enregistrée</p>
+                                    {% endif %}
+                                {% endif %}
+                        <p class="prix">Prix : {{ product.price }} €</p>
+                    </div>
+                    
+                    <div class='col-lg-6 image'>
+                        <img src="{{product.image}}">
+                    </div>
+                </article> 
+            </div>
+        </div>
+    </div>
+{% endblock %}

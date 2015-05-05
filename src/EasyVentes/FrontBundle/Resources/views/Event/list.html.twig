@@ -1,0 +1,21 @@
+{% extends '::base.html.twig' %}
+
+
+{% block body %}
+    <div class="container">
+        {%for event in events %}
+            <div class="row evenement">
+                <div class='col-xs-offset-2 col-lg-8'>
+                    <article>
+                        <h2><a href="{{ path('easy_ventes_front_event_detail', {'id': event.id }) }}">{{ event.name }}</a></h2>
+                        <p>{{ event.description }}</p>
+                        <p class="evenement-date">
+                            <span>Date de l'évènement : {{ event.date|date("m/d/Y") }}</span> - 
+                            <span>{{ event.address }} {{ event.codePostal }} {{ event.ville }}</span>
+                        </p>
+                    </article>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

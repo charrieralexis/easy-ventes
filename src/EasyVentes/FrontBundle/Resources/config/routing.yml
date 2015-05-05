@@ -1,0 +1,36 @@
+easy_ventes_front_homepage:
+    path:     /
+    defaults: { _controller: EasyVentesFrontBundle:Default:index }
+
+
+#easy_ventes_front_product
+
+easy_ventes_front_product:
+    path:     /product
+    defaults: { _controller: EasyVentesFrontBundle:Product:list }
+
+easy_ventes_front_product_detail:
+    path:     /product/detail/{id}
+    defaults: { _controller: EasyVentesFrontBundle:Product:detail }
+    
+easy_ventes_front_product_alert:
+    path:     /product/alert
+    defaults: { _controller: EasyVentesFrontBundle:Product:alert }
+
+
+#easy_ventes_front_event
+
+easy_ventes_front_event:
+    path:     /event
+    defaults: { _controller: EasyVentesFrontBundle:Event:list }
+
+easy_ventes_front_event_detail:
+    path:     /event/detail/{id}
+    defaults: { _controller: EasyVentesFrontBundle:Event:detail }
+
+#easy_ventes_front_inscription
+
+easy_ventes_front_inscription:
+    path:     /inscription
+    defaults: { _controller: EasyVentesFrontBundle:Inscription:index }
+    
